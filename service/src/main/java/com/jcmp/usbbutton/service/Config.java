@@ -13,7 +13,7 @@ public final class Config {
     }
 
     public static Config load() throws Exception {
-        Path sysCfg = Paths.get("C:\ProgramData\UsbButton\config.properties");
+        Path sysCfg = Paths.get("C:/Users/jcmunozp/Downloads/AAA DIARIO TRABAJO/BOTON ANTIPANICO/CODIGO/COPILOT/demo-button/config/config.properties");
         Properties p = new Properties();
         if (Files.exists(sysCfg)) try (var in = new FileInputStream(sysCfg.toFile())) { p.load(in); }
 
@@ -22,7 +22,7 @@ public final class Config {
 
         int port = Integer.parseInt(portStr);
         if (token == null || token.isBlank() || "CHANGE_ME".equals(token)) {
-            throw new IllegalStateException("Token no válido. Configura C:\ProgramData\UsbButton\config.properties");
+            throw new IllegalStateException("Token no válido. Configura C:/Users/jcmunozp/Downloads/AAA DIARIO TRABAJO/BOTON ANTIPANICO/CODIGO/COPILOT/demo-button/config/config.properties");
         }
         return new Config(port, token);
     }
